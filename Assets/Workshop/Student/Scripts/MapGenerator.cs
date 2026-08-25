@@ -30,7 +30,9 @@ namespace Workshop.Student
             // 2. create obstacles
 
             // 3. create floor
-
+            int x = 0;
+            int y = 0;
+            Instantiate(floorTiles[0],new Vector2(x,y),Quaternion.identity);
             // 4. create walls
 
             // 5. random foods

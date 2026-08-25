@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Android;
 
 namespace Assignment
 {
@@ -10,9 +12,9 @@ namespace Assignment
     {
         public void Start()
         {
-            AS01_RandomItemDrop();
+            // AS01_RandomItemDrop();
             // AS02_NestedLoopForCreate2DMap();
-            // AS03_NestedLoopForMakingWallAround();
+            AS03_NestedLoopForMakingWallAround();
             // AS04_AttackEnemy();
             // AS05_DynamicIterationLoop();
             // AS06_WhileLoopAndArray();
@@ -46,7 +48,10 @@ namespace Assignment
         public GameObject[] as01_items;
         public void AS01_RandomItemDrop()
         {
-            throw new NotImplementedException();
+            int selectedItem = UnityEngine.Random.Range(0, as01_items.Length);
+            GameObject go = as01_items[selectedItem];
+            Instantiate(go);
+            Debug.Log($"Got item: {go.name}");
         }
 
         /*
@@ -108,7 +113,18 @@ namespace Assignment
         public int as02_rows;
         public void AS02_NestedLoopForCreate2DMap()
         {
-            throw new NotImplementedException();
+            Debug.Log($"Columns :{as02_columns}");
+            Debug.Log($"Rows :{as02_rows}");
+            for (int x = 0; x < as02_columns; x++)
+            {
+                for(int y = 0; y < as02_rows; y++)
+                {
+                    int selectedFloor = UnityEngine.Random.Range(0, as02_floorTiles.Length);
+                    Instantiate(as02_floorTiles[selectedFloor],new Vector2(x,y),quaternion.identity);
+                    Console.Write(as02_floorTiles[selectedFloor].name);
+                }
+            }
+                
         }
 
         /*
@@ -202,7 +218,16 @@ namespace Assignment
         public int as03_rows;
         public void AS03_NestedLoopForMakingWallAround()
         {
-            throw new NotImplementedException();
+            for (int x = 0; x < as03_columns; x++)
+            {
+                for(int y = 0; y < as03_rows; y++)
+                {
+                    if (x == 0 || x == as03_columns - 1 || y == 0 || y == as03_rows - 1)
+                    {
+                        Instantiate(as03_wall,new Vector2(x,y),quaternion.identity);
+                    }
+                }
+            }
         }
 
         /*

@@ -390,7 +390,7 @@ void AS02_NestedLoopForCreate2DMap()
 
 - ใช้ Nested Loop (ลูปแถวซ้อนลูปคอลัมน์) เพื่อสร้างแผนที่ขนาด `as02_columns` x `as02_rows`
 - ในแต่ละตำแหน่ง `(x, y)` ให้สุ่มเลือก GameObject พื้นจาก array `as02_floorTiles`
-- ใช้ `Instantiate(tilePrefab, new Vector2(x, y), transform.rotation)` เพื่อสร้างแผ่นพื้น
+-ilePrefa ใช้ `Instantiate(tb, new Vector2(x, y), transform.rotation)` เพื่อสร้างแผ่นพื้น
 - แสดงชื่อ GameObject ของแผ่นพื้นออกมาเพื่อดู pattern ของแผนที่ที่สุ่มได้
 
 **Test Cases:**
