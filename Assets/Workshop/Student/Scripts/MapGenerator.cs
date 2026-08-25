@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Workshop.Student
@@ -61,7 +62,10 @@ namespace Workshop.Student
             int numberOfFood = UnityEngine.Random.Range(1, 3);
             for (int i = 0; i < numberOfFood; i++)
             {
-
+                int randomX = UnityEngine.Random.Range(0,columns);
+                int randomY = UnityEngine.Random.Range(0,rows);
+                GameObject food = Instantiate(foodTiles[0],new Vector2(randomX,randomY),quaternion.identity);
+                food.name = $"food {randomX},{randomY}";
             }
             // 6. generate item along with the saveItemMap
 
