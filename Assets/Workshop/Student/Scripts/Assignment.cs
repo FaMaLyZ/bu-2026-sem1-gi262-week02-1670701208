@@ -117,14 +117,14 @@ namespace Assignment
             Debug.Log($"Rows :{as02_rows}");
             for (int x = 0; x < as02_columns; x++)
             {
-                for(int y = 0; y < as02_rows; y++)
+                for (int y = 0; y < as02_rows; y++)
                 {
                     int selectedFloor = UnityEngine.Random.Range(0, as02_floorTiles.Length);
-                    Instantiate(as02_floorTiles[selectedFloor],new Vector2(x,y),quaternion.identity);
+                    Instantiate(as02_floorTiles[selectedFloor], new Vector2(x, y), quaternion.identity);
                     Console.Write(as02_floorTiles[selectedFloor].name);
                 }
             }
-                
+
         }
 
         /*
@@ -218,13 +218,13 @@ namespace Assignment
         public int as03_rows;
         public void AS03_NestedLoopForMakingWallAround()
         {
-            for (int x = 0; x < as03_columns; x++)
+            for (int x = -1; x < as03_columns; x++)
             {
-                for(int y = 0; y < as03_rows; y++)
+                for (int y = -1; y < as03_rows; y++)
                 {
-                    if (x == 0 || x == as03_columns - 1 || y == 0 || y == as03_rows - 1)
+                    if (x == -1 || x == as03_columns || y == -1 || y == as03_rows)
                     {
-                        Instantiate(as03_wall,new Vector2(x,y),quaternion.identity);
+                        Instantiate(as03_wall, new Vector2(x, y), quaternion.identity);
                     }
                 }
             }
